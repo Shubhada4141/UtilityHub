@@ -5,7 +5,7 @@ from app.core.config import settings
 from app.db.session import engine, Base
 from app.api.endpoints import auth, tools, ai, contact
 
-# Initialize SQLite/PostgreSQL Database tables automatically on application startup
+# Initialize PostgreSQL Database tables automatically on application startup
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(

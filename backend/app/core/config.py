@@ -6,10 +6,10 @@ class Settings(BaseSettings):
     SECRET_KEY: str = os.getenv("SECRET_KEY", "super-secret-key-utilityhub-ai-platform-2026")
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7  # 7 days
     
-    # DB URL: MySQL for XAMPP
+    # DB URL: PostgreSQL for cross-platform support
     DATABASE_URL: str = os.getenv(
         "DATABASE_URL", 
-        "mysql+pymysql://root:@localhost:3306/utilityhub"
+        "postgresql://postgres:postgres@localhost:5432/utilityhub"
     )
     
     PROJECT_NAME: str = "UtilityHub AI API"
