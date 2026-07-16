@@ -6,6 +6,8 @@ import { useFavorites } from '../context/FavoritesContext';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api/v1';
+
 // Import tool sub-modules
 import { TextTools } from '../components/tools/TextTools';
 import { DevTools } from '../components/tools/DevTools';
@@ -27,7 +29,7 @@ export const ToolRunner: React.FC = () => {
       // Log usage to backend in background if desired
       const token = localStorage.getItem('token');
       if (token && !token.startsWith('mock-')) {
-        fetch('http://localhost:8000/api/v1/tools/log', {
+        fetch(`${API_URL}/tools/log`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
