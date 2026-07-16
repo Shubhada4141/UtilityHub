@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     # DB URL: PostgreSQL for cross-platform support
     DATABASE_URL: str = os.getenv(
         "DATABASE_URL", 
-        "postgresql://postgres:postgres@localhost:5432/utilityhub"
+        "postgresql+psycopg://postgres:postgres@localhost:5432/utilityhub"
     )
     
     PROJECT_NAME: str = "UtilityHub AI API"
