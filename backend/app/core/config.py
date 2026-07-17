@@ -26,3 +26,7 @@ class Settings(BaseSettings):
         case_sensitive = True
 
 settings = Settings()
+
+# Convert postgresql:// to postgresql+psycopg:// for Render compatibility
+if settings.DATABASE_URL.startswith("postgresql://"):
+    settings.DATABASE_URL = settings.DATABASE_URL.replace("postgresql://", "postgresql+psycopg://", 1)
