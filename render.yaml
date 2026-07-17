@@ -25,7 +25,7 @@ services:
     startCommand: cd frontend && npm run preview -- --host 0.0.0.0 --port $PORT
     envVars:
       - key: VITE_API_URL
-        value: https://anti-gravity-backend.onrender.com/api/v1
+        value: https://anti-gravity-backend-xhiz.onrender.com/api/v1
 
 databases:
   # PostgreSQL Database
